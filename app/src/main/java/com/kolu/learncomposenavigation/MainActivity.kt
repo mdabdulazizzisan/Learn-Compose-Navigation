@@ -7,23 +7,26 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.kolu.learncomposenavigation.basicnavigation.navigation.BasicNavigation
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.kolu.learncomposenavigation.threescreennavigation.navigation.ThreeScreenNavigation
 import com.kolu.learncomposenavigation.ui.theme.LearnComposeNavigationTheme
 
 class MainActivity : ComponentActivity() {
+    lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             LearnComposeNavigationTheme {
+                navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    BasicNavigation(
+                    ThreeScreenNavigation(
                         modifier = Modifier
-                            .padding(innerPadding)
                             .fillMaxSize()
+                            .padding(innerPadding),
+                        navController = navController
                     )
                 }
             }
