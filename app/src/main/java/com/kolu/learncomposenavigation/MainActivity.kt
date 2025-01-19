@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.kolu.learncomposenavigation.threescreennavigation.navigation.ThreeScreenNavigation
+import com.kolu.learncomposenavigation.passingargumentstosecondscreen.navigation.PassArgTwoScreen
 import com.kolu.learncomposenavigation.ui.theme.LearnComposeNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
             LearnComposeNavigationTheme {
                 navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ThreeScreenNavigation(
+                    PassArgTwoScreen(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding),
