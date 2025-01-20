@@ -12,7 +12,7 @@ fun NestedNavMainNavGraph(
     navController: NavHostController) {
 
     NavHost(
-        startDestination = NestedNavigationGroup.AuthScreen.LoginScreen,
+        startDestination = NestedNavigationGroup.AuthScreen,
         navController =  navController
     ) {
         authNavGraph(navController = navController)

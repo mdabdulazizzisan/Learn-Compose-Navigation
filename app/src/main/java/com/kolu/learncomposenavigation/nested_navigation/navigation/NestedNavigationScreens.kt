@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 sealed interface NestedNavigationGroup {
 
     @Serializable
-    sealed interface AuthScreen{
+    data object AuthScreen{
         @Serializable
         data object LoginScreen: NestedNavigationGroup
         @Serializable
@@ -15,10 +15,12 @@ sealed interface NestedNavigationGroup {
     }
 
     @Serializable
-    sealed interface HomeNavigationGroup{
+    data object HomeNavigationGroup{
+        @Serializable
         data class HomeScreen(
             var username: String
         )
+        @Serializable
         data object DetailsScreen
     }
 }
